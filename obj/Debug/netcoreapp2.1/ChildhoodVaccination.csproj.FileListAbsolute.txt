@@ -1,0 +1,14 @@
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/bin/Debug/netcoreapp2.1/ChildhoodVaccination.deps.json
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/bin/Debug/netcoreapp2.1/ChildhoodVaccination.runtimeconfig.json
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/bin/Debug/netcoreapp2.1/ChildhoodVaccination.runtimeconfig.dev.json
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/bin/Debug/netcoreapp2.1/ChildhoodVaccination.dll
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/bin/Debug/netcoreapp2.1/ChildhoodVaccination.pdb
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.csprojAssemblyReference.cache
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.csproj.CoreCompileInputs.cache
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.RazorAssemblyInfo.cache
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.RazorAssemblyInfo.cs
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.AssemblyInfoInputs.cache
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.AssemblyInfo.cs
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.RazorTargetAssemblyInfo.cache
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.dll
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.pdb
