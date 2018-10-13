@@ -1,0 +1,17 @@
+@model IEnumerable<ChildhoodVaccination.Models.Child>
+<html>
+<head>
+    <title>Index page</title>
+</head>
+<body>
+    <table>
+        @foreach (var child in Model)
+        {
+        <tr>
+            <td>@child.Id</td>
+            <td>@child.Name</td>
+        </tr>
+        }
+    </table>
+</body>
+</html>
