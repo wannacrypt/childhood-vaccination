@@ -11510,13 +11510,13 @@
       "projectName": "ChildhoodVaccination",
       "projectPath": "/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/ChildhoodVaccination.csproj",
       "packagesPath": "/Users/zhandos/.nuget/packages/",
-      "outputPath": "/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj",
+      "outputPath": "/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/zhandos/.config/NuGet/NuGet.Config"
+        "/Users/zhandos/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -11541,12 +11541,12 @@
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.1"
+            "version": "[2.1.1, )",
+            "autoReferenced": true
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },

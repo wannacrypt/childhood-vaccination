@@ -9,9 +9,9 @@ namespace ChildhoodVaccination.Services
         {
             _children = new List<Child>
             {
-                new Child { Id = 1, Name = "Zhandos's Palace" },
-                new Child { Id = 2, Name = "Daulet Pizza Place" },
-                new Child { Id = 3, Name = "Talgat's Burgers" }
+                new Child { Id = 1, Name = "Zhandos" },
+                new Child { Id = 2, Name = "Daulet" },
+                new Child { Id = 3, Name = "Talgat" }
             };
         }
 

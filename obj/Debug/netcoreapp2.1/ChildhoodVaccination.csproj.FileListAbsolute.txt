@@ -20,3 +20,4 @@
 /Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.dll
 /Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.pdb
 /Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.csproj.CopyComplete
+/Users/zhandos/Desktop/LastSemester/ASP.NET/ChildhoodVaccination/obj/Debug/netcoreapp2.1/ChildhoodVaccination.csprojAssemblyReference.cache
