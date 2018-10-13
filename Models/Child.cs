@@ -1,3 +1,6 @@
+
+using System;
+
 namespace ChildhoodVaccination.Models
 {
     public class Child
@@ -6,7 +9,8 @@ namespace ChildhoodVaccination.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
-        // public Date dob { get; set; }
-
+        public string DOB { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime Updated { get; set; }
     }
 }

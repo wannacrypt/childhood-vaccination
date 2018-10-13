@@ -19,6 +19,7 @@ namespace ChildhoodVaccination
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>().UseUrls("http://localhost:5050");
+                   .UseStartup<Startup>();
+        //.UseUrls("http://localhost:5050");
     }
 }
