@@ -4,6 +4,7 @@ namespace ChildhoodVaccination.Models
 {
     public class Child
     {
+        public long ID { get; set;  }
         public string IIN { get; set; }
         public string ID_doctor { get; set; }
         public string ID_hospital { get; set; }

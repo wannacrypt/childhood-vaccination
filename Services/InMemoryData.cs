@@ -3,7 +3,7 @@ using ChildhoodVaccination.Models;
 
 namespace ChildhoodVaccination.Services
 {
-    public class InMemoryData : IData
+    public class InMemoryData : IChildData
     {
         public InMemoryData()
         {
@@ -16,6 +16,16 @@ namespace ChildhoodVaccination.Services
         public IEnumerable<Child> GetAll()
         {
             return _children;
+        }
+
+        public Child Get(string iin)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Child Add(Child child)
+        {
+            throw new System.NotImplementedException();
         }
 
         List<Child> _children;

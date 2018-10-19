@@ -1,12 +1,11 @@
 ﻿<Properties StartupConfiguration="{036D72B4-B821-45C8-B9E9-AE1EDE6DD2BF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Models/VaccineSchedule.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Child.cs">
     <Files>
-      <File FileName="Startup.cs" Line="19" Column="35" />
-      <File FileName="Models/Child.cs" Line="14" Column="42" />
-      <File FileName="Services/InMemoryData.cs" Line="12" Column="42" />
-      <File FileName="Views/Home/Index.cshtml" Line="22" Column="33" />
-      <File FileName="Controllers/HomeController.cs" Line="3" Column="1" />
-      <File FileName="Models/VaccineSchedule.cs" Line="6" Column="19" />
+      <File FileName="Startup.cs" Line="42" Column="13" />
+      <File FileName="Models/Child.cs" Line="4" Column="2" />
+      <File FileName="appsettings.json" Line="3" Column="116" />
+      <File FileName="Migrations/20181019142827_InitialCreate.cs" Line="17" Column="46" />
+      <File FileName="Views/Home/Index.cshtml" Line="14" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
