@@ -5,11 +5,23 @@
 </head>
 <body>
     <table>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>DOB</th>
+            <th>Phone</th>
+            <th>Created</th>
+        </tr>
         @foreach (var child in Model)
         {
         <tr>
-            <td>@child.Id</td>
+            <td>@child.IIN</td>
             <td>@child.Name</td>
+            <td>@child.LastName</td>
+            <td>@child.BirthDate</td>
+            <td>@child.Phone</td>
+            <td>@child.Created</td>
         </tr>
         }
     </table>

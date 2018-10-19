@@ -11,6 +11,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4" PrivateAssets="All" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="DataAccessPostgreSqlProvider.cs" />
+    <Compile Remove="DomainModelPostgreSqlContext.cs" />
+    <Compile Remove="Models\EmptyClass.cs" />
+  </ItemGroup>
 </Project>
