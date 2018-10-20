@@ -1,10 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace ChildhoodVaccination.Models
 {
     public class TicketVaccine
     {
-        public string ID_ticket { get; set; }
-        public string ID_vaccine_schedule { get; set; }
+        [Key]
+        public string TicketVaccineID { get; set; }
+        public string VaccineScheduleID { get; set; }
         public string TicketName { get; set; }
         public DateTime TicketDate { get; set; }
         public int Room { get; set; }

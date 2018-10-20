@@ -13,5 +13,7 @@ namespace ChildhoodVaccination.Data
         }
 
         public DbSet<Child> Children { get; set; }
+
+        public DbSet<Hospital> Hospitals { get; set; }
     }
 }

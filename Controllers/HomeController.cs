@@ -5,9 +5,9 @@ namespace ChildhoodVaccination.Controllers
 {
     public class HomeController : Controller
     {
-        private IChildData _data;
+        private ChildService _data;
 
-        public HomeController(IChildData data)
+        public HomeController(ChildService data)
         {
             _data = data;
         }

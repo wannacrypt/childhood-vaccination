@@ -7,6 +7,7 @@ using ChildhoodVaccination.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using ChildhoodVaccination.Data;
+using ChildhoodVaccination.Repositories;
 
 namespace ChildhoodVaccination
 {
@@ -23,10 +24,9 @@ namespace ChildhoodVaccination
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IGreater, GreatingService>();
             services.AddDbContext<ChildhoodVaccinationDbContext>(
                 options => options.UseNpgsql(_configuration.GetConnectionString("PostgreSqlConnection")));
-            services.AddScoped<IChildData, PostgreSqlChildData>();
+            services.AddScoped<ChildService, ChildRepository>();
             services.AddMvc();
         }
 
