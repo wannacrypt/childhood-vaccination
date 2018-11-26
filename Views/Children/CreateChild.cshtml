@@ -1,0 +1,29 @@
+﻿@using Playground.Models
+@model Child
+
+<h1>Create</h1>
+
+<form method="post">
+    <div>
+        <label asp-for="IIN"></label>
+        <input asp-for="IIN" />
+        <span asp-validation-for="IIN"></span>
+    </div>
+    <div>
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" />
+    </div>
+    <div>
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" />
+    </div>
+    <div>
+        <label asp-for="DateOfBirth"></label>
+        <input asp-for="DateOfBirth" />
+    </div>
+    <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" />
+    </div>
+    <input type="submit" name="save" value="Save" />
+</form>

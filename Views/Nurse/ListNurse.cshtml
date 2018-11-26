@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Playground.Models.Nurse>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Nurse list</title>
+</head>
+<body>
+    <h4>List of Nurses</h4>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Last name</th>
+            <th>First name</th>
+        </tr>
+        @foreach (var a in Model)
+        {
+            <tr>
+                <td>@a.Id</td>
+                <td>@a.LastName</td>
+                <td>@a.FirstName</td>
+                <td><a asp-action="DeleteNurse" asp-route-id="@a.Id">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <a asp-action="CreateNurse">Add new doctor</a>
+    <br />
+    <a asp-action="Index" asp-controller="Home">Go back</a>
+</body>
+</html>

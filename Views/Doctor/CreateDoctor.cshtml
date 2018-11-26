@@ -1,0 +1,22 @@
+﻿@using Playground.Models
+@model Doctor
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create New Doctor</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName" />
+            <span asp-validation-for="FirstName"></span>
+        </div>
+        <div>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName" />
+            <span asp-validation-for="LastName"></span>
+        </div>
+        <input type="submit" name="add" value="Add" />
+    </form>
+</body>
+</html>

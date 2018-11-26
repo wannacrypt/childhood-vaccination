@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{1B4468E7-38F6-46C1-8BA0-11B853C1E38C}|Default">
+  <MonoDevelop.Ide.ItemProperties.Playground PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Child.cs">
+    <Files>
+      <File FileName="Views/Nurse/ListNurse.cshtml" Line="28" Column="8" />
+      <File FileName="Controllers/PrescriptionController.cs" Line="50" Column="31" />
+      <File FileName="Controllers/ScheduleController.cs" Line="52" Column="31" />
+      <File FileName="Controllers/DoctorController.cs" Line="12" Column="29" />
+      <File FileName="Controllers/HomeController.cs" Line="15" Column="29" />
+      <File FileName="Controllers/AdminController.cs" Line="59" Column="26" />
+      <File FileName="Views/Authorization/Login.cshtml" Line="10" Column="38" />
+      <File FileName="Views/Admin/GetAllAdmins.cshtml" Line="6" Column="1" />
+      <File FileName="Controllers/AuthorizationController.cs" Line="37" Column="56" />
+      <File FileName="Models/Admin.cs" Line="9" Column="10" />
+      <File FileName="Models/Child.cs" Line="20" Column="2" />
+      <File FileName="Models/Doctor.cs" Line="11" Column="34" />
+      <File FileName="Views/Doctor/CreateDoctor.cshtml" Line="22" Column="8" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

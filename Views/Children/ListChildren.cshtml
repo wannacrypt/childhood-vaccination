@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Playground.Models.Child>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Date of Birth</th>
+            <th>Phone</th>
+        </tr>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Id</td>
+                <td>@c.LastName</td>
+                <td>@c.FirstName</td>
+                <td>@c.DateOfBirth</td>
+                <td>@c.Phone</td>
+            </tr>
+        }
+    </table>
+    <a asp-action="CreateChild"> Add new Child </a>
+    <br />
+    <a asp-action="Index" asp-controller="Home">Go back</a>
+</body>
+</html>

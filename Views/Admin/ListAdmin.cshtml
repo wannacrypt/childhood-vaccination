@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Playground.Models.Admin>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Admin list</title>
+</head>
+<body>
+    <h4>List of Admins</h4>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Password</th>
+        </tr>
+        @foreach(var a in Model)
+        {
+        <tr>
+            <td>@a.Id</td>
+            <td>@a.Login</td>
+            <td>@a.Password</td>
+            <td><a asp-action="DeleteAdmin" asp-route-id="@a.Id">Delete</a></td>
+        </tr>
+        }
+    </table>
+    <a asp-action="CreateAdmin">Add new administrator</a>
+    <br />
+    <a asp-action="Index" asp-controller="Home">Go back</a>
+</body>
+</html>
