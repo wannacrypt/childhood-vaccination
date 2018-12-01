@@ -1,0 +1,66 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/styles.css",
+    "inputFiles": [
+      "wwwroot/Res/css/style.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bootstrap.css",
+    "inputFiles": [
+      "wwwroot/Res/bootstrap/css/bootstrap.min.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/colors.css",
+    "inputFiles": [
+      "wwwroot/colors/blue.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/jquery.js",
+    "inputFiles": [
+      "wwwroot/Res/js/jquery/jquery.min.js",
+      "wwwroot/Res/js/jquery.slimscroll.js",
+      "wwwroot/Res/js/jquery.PrintArea.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/bootstrap.js",
+    "inputFiles": [
+      "wwwroot/Res/bootstrap/js/bootstrap.min.js",
+      "wwwroot/Res/bootstrap/js/popper.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/waves.js",
+    "inputFiles": [
+      "wwwroot/Res/js/waves.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/sidebarmenu.js",
+    "inputFiles": [
+      "wwwroot/Res/js/sidebarmenu.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/sticky.js",
+    "inputFiles": [
+      "wwwroot/Res/js/sticky-kit-master/dist/sticky-kit.min.js",
+      "wwwroot/Res/js/sparkline/jquery.sparkline.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/custom.js",
+    "inputFiles": [
+      "wwwroot/Res/js/custom.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/style-switcher.js",
+    "inputFiles": [
+      "wwwroot/Res/js/styleswitcher/jQuery.style.switcher.js"
+    ]
+  }
+]
