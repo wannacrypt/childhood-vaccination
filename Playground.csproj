@@ -19,6 +19,7 @@
     <Folder Include="Views\Children\" />
     <Folder Include="Views\Nurse\" />
     <Folder Include="wwwroot\Res\" />
+    <Folder Include="Views\Layout\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -440,6 +441,7 @@
     <Compile Remove="Migrations\20181124072753_InitialCreate.cs" />
     <Compile Remove="Migrations\20181128061520_SecondCreate.cs" />
     <Compile Remove="App_Start\BundleConfig.cs" />
+    <Compile Remove="Migrations\20181129040926_SecondCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Res\bootstrap\css\bootstrap.css" />

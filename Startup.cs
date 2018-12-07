@@ -39,6 +39,8 @@ namespace Playground
             services.AddScoped<ITicketService, SqlTicketData>();
             services.AddScoped<IVaccineListService, SqlVaccineListData>();
             services.AddMvc();
+            services.AddDistributedMemoryCache();
+            services.AddSession(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +58,8 @@ namespace Playground
             {
                 await context.Response.WriteAsync(greeting.GetErrorMessage());
             });
+
+            app.UseSession();
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
