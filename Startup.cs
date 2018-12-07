@@ -27,6 +27,7 @@ namespace Playground
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(); 
             services.AddSingleton<IGreetingService, Greeter>();
             services.AddDbContext<ChildVaccDbContext>
                     (options => options.UseNpgsql(_configuration.GetConnectionString("PostgreSqlConnection")));
@@ -40,7 +41,6 @@ namespace Playground
             services.AddScoped<IVaccineListService, SqlVaccineListData>();
             services.AddMvc();
             services.AddDistributedMemoryCache();
-            services.AddSession(); 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +50,7 @@ namespace Playground
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseSession();
             app.UseStaticFiles();
             app.UseMvc(ConfigureRoutes);
 
@@ -59,7 +59,6 @@ namespace Playground
                 await context.Response.WriteAsync(greeting.GetErrorMessage());
             });
 
-            app.UseSession();
         }
 
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
