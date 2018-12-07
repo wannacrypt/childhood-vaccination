@@ -21,6 +21,9 @@
     <Folder Include="wwwroot\Res\" />
     <Folder Include="Views\Layout\" />
     <Folder Include="Views\Partials\" />
+    <Folder Include="compilerconfig.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Folder>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +32,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
-    <PackageReference Include="BuildWebCompiler" Version="1.12.394" />
+    <PackageReference Include="BundlerMinifier.Core" Version="2.8.391" />
   </ItemGroup>
 
   <ItemGroup>
@@ -206,7 +209,6 @@
     <Content Remove="wwwroot\Res\calendar\dist\locale-all.js" />
     <Content Remove="wwwroot\Res\calendar\jquery-ui.min.js" />
     <Content Remove="wwwroot\Res\css\animate.css" />
-    <Content Remove="wwwroot\Res\css\colors\blue.css" />
     <Content Remove="wwwroot\Res\css\material.css" />
     <Content Remove="wwwroot\Res\css\spinners.css" />
     <Content Remove="wwwroot\Res\css\style.css" />
@@ -428,6 +430,156 @@
     <Content Remove="wwwroot\Res\js\waves.js" />
     <Content Remove="wwwroot\Res\js\widget-charts.js" />
     <Content Remove="wwwroot\Res\js\widget-data.js" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\locale\pt.js" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lib\moment.min.js" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\CHANGELOG.txt" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\fullcalendar.print.min.css" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\cal-init.js" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\LICENSE.txt" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\lang-all.js" />
+    <Content Remove="wwwroot\css\plugins\calendar\dist\fullcalendar.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-reboot.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-grid.css" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.bundle.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\popper.min.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\popper.min.js" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.js.map" />
+    <Content Remove="wwwroot\css\plugins\bootstrap\js\bootstrap.min.js.map" />
+    <Content Remove="wwwroot\css\plugins\sticky-kit-master\dist\sticky-kit.js" />
+    <Content Remove="wwwroot\css\plugins\sticky-kit-master\dist\sticky-kit.min.js" />
+    <Content Remove="wwwroot\css\plugins\moment\moment.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\locales.min.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\tests.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\moment-with-locales.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\locales.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\moment.min.js" />
+    <Content Remove="wwwroot\css\plugins\moment\min\moment-with-locales.min.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\moment.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\pt.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\vi.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\lv.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\gl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\pl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\tzm-latn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\en-ca.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\mr.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\el.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\tzm.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\et.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\is.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\nn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ko.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ar-sa.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\hr.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ms.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fi.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\th.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\jv.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\tzl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ru.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\eu.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\mk.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sq.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\si.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ja.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ka.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\he.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\bg.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sr-cyrl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\my.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\uz.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ar-tn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ne.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\tl-ph.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\af.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\id.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\az.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\me.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\en-au.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\lb.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ca.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ta.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\cy.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\nb.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\be.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\zh-cn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\zh-tw.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\pt-br.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\de-at.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\da.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fa.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\de.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fy.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ms-my.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\bs.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sv.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\hi.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\uk.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\cs.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\km.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fr.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\nl.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fr-ca.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\en-gb.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sr.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\hu.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\lt.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ml.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\bo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\fo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ar-ma.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ar.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\hy-am.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\cv.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\sk.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\it.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\es.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\bn.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\eo.js" />
+    <Content Remove="wwwroot\css\plugins\moment\src\locale\ro.js" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap.min.css.map" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap-grid.css" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Remove="budleconfig.json" />
+    <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\js\sidebarmenu.js" />
+    <Content Remove="wwwroot\js\sidebarmenu.min.js" />
+    <Content Remove="wwwroot\js\sticky.js" />
+    <Content Remove="wwwroot\js\sticky.min.js" />
+    <Content Remove="wwwroot\js\custom.js" />
+    <Content Remove="wwwroot\js\custom.min.js" />
+    <Content Remove="wwwroot\js\style-switcher.js" />
+    <Content Remove="wwwroot\js\style-switcher.min.js" />
+    <Content Remove="wwwroot\js\calendar.js" />
+    <Content Remove="wwwroot\js\calendar.min.js" />
+    <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\User.cs" />
@@ -613,7 +765,6 @@
     <None Include="wwwroot\Res\calendar\dist\locale-all.js" />
     <None Include="wwwroot\Res\calendar\jquery-ui.min.js" />
     <None Include="wwwroot\Res\css\animate.css" />
-    <None Include="wwwroot\Res\css\colors\blue.css" />
     <None Include="wwwroot\Res\css\material.css" />
     <None Include="wwwroot\Res\css\spinners.css" />
     <None Include="wwwroot\Res\css\style.css" />

@@ -64,6 +64,10 @@ namespace Playground
         private void ConfigureRoutes(IRouteBuilder routeBuilder)
         {
             routeBuilder.MapRoute("Default", "{controller=Authorization}/{action=Login}/{id?}");
+            routeBuilder.MapRoute("Profile", "{controller=Home}/{action=Profile}/");
+            routeBuilder.MapRoute("HomePage", "{controller=Home}/{action=Index}/");
+            routeBuilder.MapRoute("Calendar", "{controller=Home}/{action=Calendar}/");
+            routeBuilder.MapRoute("Schedule", "{controller=Schedule}/{action=Profile}"); 
         }
     }
 }

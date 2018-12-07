@@ -1,5 +1,4 @@
-﻿@model Playground.Models.Admin
-@{
+﻿@{
     Layout = "~/Views/Layout/Layout.cshtml";
 }
 <body class="fix-header card-no-border">
@@ -13,53 +12,39 @@
             await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml");
             await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
-
         <div class="page-wrapper">
-            <div class="row page-titles">
-                <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Profile</h3>
-                </div>
-            </div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <center class="m-t-30">
-                                    <img src="~/Res/images/users/2.jpg" class="img-circle" width="150" />
-                                    <h4 class="card-title m-t-10">@Model.Name @Model.Surname</h4>
-                                    <h6 class="card-subtitle">@Model.Login</h6>
-
-                                </center>
-                            </div>
-                            <div>
-                                <hr>
-                            </div>
-                            <div class="card-body">
-                                <small class="text-muted p-t-30 db">Phone</small>
-                                <h6>+91 654 784 547</h6>
-                                <small class="text-muted p-t-30 db">Birth Date</small>
-                                <h6>14-10-2017</h6>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-xlg-9 col-md-7">
-                        <div class="card">
-                            <ul class="nav nav-tabs profile-tab" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Timeline</a> </li>
-
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="home" role="tabpanel">
+                                <div class="row m-t-40">
+                                    <div class="col-md-6 col-lg-4 col-xlg-4">
+                                        <div class="card card-inverse card-info">
+                                            <div class="box bg-info text-center">
+                                                <h1 class="font-light text-white">2,064</h1>
+                                                <h6 class="text-white">Total Patients</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xlg-4">
+                                        <div class="card card-success card-inverse">
+                                            <div class="box text-center">
+                                                <h1 class="font-light text-white">1,738</h1>
+                                                <h6 class="text-white">Patients for Visit</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-4 col-xlg-4">
+                                        <div class="card card-inverse card-danger">
+                                            <div class="box text-center">
+                                                <h1 class="font-light text-white">1100</h1>
+                                                <h6 class="text-white">Patients for Vaccination</h6>
+                                            </div>
+                                        </div>
+                                    </div>
                                     @{
-                                        await Html.RenderPartialAsync("~/Views/Partials/_Settings.cshtml", Model);
-                                    }
-                                </div>
-                                <div class="tab-pane" id="settings" role="tabpanel">
-                                    @{
-                                        await Html.RenderPartialAsync("~/Views/Partials/_Settings.cshtml", Model);
+                                        await Html.RenderPartialAsync("~/Views/Partials/_Patients.cshtml");
                                     }
                                 </div>
                             </div>

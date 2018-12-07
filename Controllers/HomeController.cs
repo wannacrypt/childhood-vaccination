@@ -26,7 +26,31 @@ namespace Playground.Controllers
             if (!string.IsNullOrEmpty(userLogin))
             {
                 Admin admin = __adminService.Get(userLogin);
-                return View("~/Views/Home/Index.cshtml", admin);
+                return View("~/Views/Home/Index.cshtml");
+            }
+            return RedirectToAction("Login", "Authorization");
+        }
+
+        public IActionResult Profile()
+        {
+            string userLogin = HttpContext.Session.GetString("user");
+
+            if (!string.IsNullOrEmpty(userLogin))
+            {
+                Admin admin = __adminService.Get(userLogin);
+                return View("~/Views/Home/Profile.cshtml", admin);
+
+            }
+            return RedirectToAction("Login", "Authorization");
+        }
+
+        public IActionResult Calendar()
+        {
+            string userLogin = HttpContext.Session.GetString("user");
+
+            if (!string.IsNullOrEmpty(userLogin))
+            {
+                return View("~/Views/Home/Calendar.cshtml");
 
             }
             return RedirectToAction("Login", "Authorization");
