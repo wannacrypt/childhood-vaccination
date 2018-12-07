@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Playground.Models;
 using Playground.Services;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace Playground.Controllers
 {
@@ -34,6 +36,7 @@ namespace Playground.Controllers
                     if(a.Login.Equals(admin.Login) && 
                        a.Password.Equals(admin.Password))
                     {
+                        HttpContext.Session.SetString("user", admin.Login); 
                         _greeting.SetUser(admin.Login);
                         return RedirectToAction("Index", "Home");
                     }

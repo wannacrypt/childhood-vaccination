@@ -20,6 +20,7 @@
     <Folder Include="Views\Nurse\" />
     <Folder Include="wwwroot\Res\" />
     <Folder Include="Views\Layout\" />
+    <Folder Include="Views\Partials\" />
   </ItemGroup>
 
   <ItemGroup>
