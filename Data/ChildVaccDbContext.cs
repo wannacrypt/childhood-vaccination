@@ -21,6 +21,13 @@ namespace Playground.Data
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<VaccineList> VaccineLists { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Admin>()
+                .HasIndex(a => a.Login)
+                .IsUnique();
+        }
+
         public ChildVaccDbContext(DbContextOptions options)
             : base(options)
         {

@@ -17,8 +17,9 @@ namespace Playground.Services
         public Greeter(IConfiguration configuration)
         {
             _configuration = configuration;
-        }
+            _configuration["User"] = string.Empty; 
 
+        }
         public string GetGreetingMessage()
         {
             return _configuration["Greeting"];

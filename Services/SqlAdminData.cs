@@ -34,6 +34,11 @@ namespace Playground.Services
             return _context.Admins.FirstOrDefault(a => a.Id == id);
         }
 
+        public Admin Get(string login)
+        {
+            return _context.Admins.FirstOrDefault(a => a.Login == login);
+        }
+
         public IEnumerable<Admin> GetAll()
         {
             return _context.Admins.OrderBy(a => a.Login);

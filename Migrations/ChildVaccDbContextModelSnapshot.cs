@@ -27,10 +27,17 @@ namespace Playground.Migrations
                     b.Property<string>("Login")
                         .IsRequired();
 
+                    b.Property<string>("Name");
+
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<string>("Surname");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("Admins");
                 });

@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Playground.Migrations
 {
-    public partial class SecondCreate : Migration
+    public partial class FifthCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,9 @@ namespace Playground.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Login = table.Column<string>(nullable: false),
-                    Password = table.Column<string>(nullable: false)
+                    Password = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Surname = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -129,6 +131,12 @@ namespace Playground.Migrations
                 {
                     table.PrimaryKey("PK_VaccineLists", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Admins_Login",
+                table: "Admins",
+                column: "Login",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

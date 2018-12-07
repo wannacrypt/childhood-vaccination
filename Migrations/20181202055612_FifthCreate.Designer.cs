@@ -10,8 +10,8 @@ using Playground.Data;
 namespace Playground.Migrations
 {
     [DbContext(typeof(ChildVaccDbContext))]
-    [Migration("20181129040926_SecondCreate")]
-    partial class SecondCreate
+    [Migration("20181202055612_FifthCreate")]
+    partial class FifthCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,10 +29,17 @@ namespace Playground.Migrations
                     b.Property<string>("Login")
                         .IsRequired();
 
+                    b.Property<string>("Name");
+
                     b.Property<string>("Password")
                         .IsRequired();
 
+                    b.Property<string>("Surname");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Login")
+                        .IsUnique();
 
                     b.ToTable("Admins");
                 });

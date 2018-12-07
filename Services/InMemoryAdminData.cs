@@ -25,6 +25,11 @@ namespace Playground.Services
             return _admins.FirstOrDefault(a => a.Id == id);
         }
 
+        public Admin Get(string login)
+        {
+            return _admins.FirstOrDefault(a => a.Login == login);
+        }
+
         public Admin Add(Admin admin)
         {
             admin.Id = _admins.Max(a => a.Id) + 1;
