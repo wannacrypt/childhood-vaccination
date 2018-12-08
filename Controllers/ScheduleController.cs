@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Playground.Models;
 using Playground.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace Playground.Controllers
 {
@@ -51,6 +52,18 @@ namespace Playground.Controllers
             {
                 return View();
             }
+        }
+
+        public IActionResult Index()
+        {
+            string userLogin = HttpContext.Session.GetString("user");
+
+            if (!string.IsNullOrEmpty(userLogin))
+            {
+                return View("~/Views/Home/Calendar.cshtml");
+
+            }
+            return RedirectToAction("Login", "Authorization");
         }
     }
 }

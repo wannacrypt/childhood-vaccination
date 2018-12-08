@@ -44,15 +44,9 @@ namespace Playground.Controllers
             return RedirectToAction("Login", "Authorization");
         }
 
-        public IActionResult Calendar()
+        public IActionResult Logout()
         {
-            string userLogin = HttpContext.Session.GetString("user");
-
-            if (!string.IsNullOrEmpty(userLogin))
-            {
-                return View("~/Views/Home/Calendar.cshtml");
-
-            }
+            HttpContext.Session.Remove("user"); 
             return RedirectToAction("Login", "Authorization");
         }
 
