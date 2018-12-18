@@ -1,62 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Playground.Models;
+using Microsoft.EntityFrameworkCore;
 using Playground.Services;
+using Playground.Models;
+using Playground.Data;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Playground.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AdminController : Controller
     {
-        private IAdminService _adminService;
+        private ChildVaccDbContext _context;
 
-        public AdminController(IAdminService adminService)
+        public AdminController(ChildVaccDbContext context)
         {
-            _adminService = adminService;
+            _context = context;
         }
 
-        public IActionResult ListAdmin()
-        {
-            var model = _adminService.GetAll();
-            return View(model);
-        }
-
-        public IActionResult DeleteAdmin(int id)
-        {
-            _adminService.Delete(id);
-            return RedirectToAction(nameof(ListAdmin));
-        }
-
+        // GET: api/values
         [HttpGet]
-        public IActionResult CreateAdmin()
+        public async Task<ActionResult<IEnumerable<Admin>>> Get()
         {
-            return View();
+            return await _context.Admins.ToListAsync();
         }
 
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Admin>> Get(int id)
+        {
+            var admin = await _context.Admins.FindAsync(id);
+
+            if(admin == null)
+            {
+                return NotFound();
+            }
+
+            return admin;
+        }
+
+        // POST api/values 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult CreateAdmin(Admin admin)
+        public async Task<ActionResult<Admin>> Post(Admin admin)
         {
-            if (ModelState.IsValid)
-            {
-                var newAdmin = new Admin();
-                newAdmin.Login = admin.Login;
-                newAdmin.Password = admin.Password;
+            _context.Admins.Add(admin);
+            await _context.SaveChangesAsync();
 
-                newAdmin = _adminService.Add(newAdmin);
-
-                return RedirectToAction(nameof(ListAdmin));
-            }
-            else
-            {
-                return View();
-            }
+            return CreatedAtAction("Get", new { id = admin.Id }, admin);
         }
 
-        public IEnumerable<Admin> GetAllAdmins()
-        {
-            var admins = _adminService.GetAll();
-            return admins;
-        }
+        //// PUT api/values/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody]string value)
+        //{
+        //}
+
+        //// DELETE api/values/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

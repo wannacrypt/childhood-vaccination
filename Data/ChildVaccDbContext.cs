@@ -24,7 +24,7 @@ namespace Playground.Data
         public ChildVaccDbContext(DbContextOptions options)
             : base(options)
         {
-
+           
         }
     }
 }

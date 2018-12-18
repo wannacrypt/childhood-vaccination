@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Playground.Models;
 using Playground.Services;
@@ -14,10 +15,11 @@ namespace Playground.Controllers
             _childService = childService;
         }
 
-        public IActionResult ListChildren()
+        public IEnumerable<Child> ListChildren()
         {
             var model = _childService.GetAll();
-            return View(model);
+            //return View(model);
+            return model;
         }
 
         [HttpGet]

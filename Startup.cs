@@ -47,20 +47,20 @@ namespace Playground
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            } 
+            else
+            {
+                app.UseHsts();
             }
 
             app.UseStaticFiles();
-            app.UseMvc(ConfigureRoutes);
+            app.UseHttpsRedirection();
+            app.UseMvc();
 
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync(greeting.GetErrorMessage());
             });
-        }
-
-        private void ConfigureRoutes(IRouteBuilder routeBuilder)
-        {
-            routeBuilder.MapRoute("Default", "{controller=Authorization}/{action=Login}/{id?}");
         }
     }
 }

@@ -5,6 +5,7 @@ using Playground.Services;
 
 namespace Playground.Controllers
 {
+    [Route("api/[controller]")]
     public class AuthorizationController : Controller
     {
         private IAdminService _adminService;
@@ -25,7 +26,7 @@ namespace Playground.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(Admin admin)
+        public bool Login(Admin admin)
         {
             if (ModelState.IsValid)
             {
@@ -35,12 +36,13 @@ namespace Playground.Controllers
                        a.Password.Equals(admin.Password))
                     {
                         _greeting.SetUser(admin.Login);
-                        return RedirectToAction("Index", "Home");
+                        //return RedirectToAction("Index", "Home");
+                        return true;
                     }
                 }
-            } 
+            }
 
-            return View();
+            return false;
         }
     }
 }
