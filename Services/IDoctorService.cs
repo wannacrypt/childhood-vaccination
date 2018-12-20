@@ -8,6 +8,7 @@ namespace Playground.Services
     {
         IEnumerable<Doctor> GetAll();
         Doctor Get(int id);
+        Doctor Get(string login); 
         Doctor Add(Doctor doctor);
         void Delete(int id);
     }

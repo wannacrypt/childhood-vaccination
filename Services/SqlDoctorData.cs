@@ -33,6 +33,11 @@ namespace Playground.Services
             return _context.Doctors.FirstOrDefault(d => d.Id == id);
         }
 
+        public Doctor Get(string login)
+        {
+            return _context.Doctors.FirstOrDefault(d => d.Login == login);
+        }
+
         public IEnumerable<Doctor> GetAll()
         {
             return _context.Doctors.OrderBy(d => d.LastName);
