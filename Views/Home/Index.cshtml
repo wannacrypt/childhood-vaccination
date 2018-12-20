@@ -1,5 +1,6 @@
-﻿@model Playground.Models.Doctor
-
+@model IEnumerable<Playground.ViewModels.ChildDoctorViewModel>
+@using Playground.Models
+@using Playground.ViewModels
 @{
     Layout = "~/Views/Layout/Layout.cshtml";
 }
@@ -15,6 +16,7 @@
         await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
         <div class="page-wrapper">
+            <br />
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -45,9 +47,56 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @{
-                                    await Html.RenderPartialAsync("~/Views/Partials/_Patients.cshtml");
-                                    }
+                                    <div class="table-responsive">
+                                        <table id="demo-foo-addrow" class="table m-t-30 table-hover no-wrap contact-list" data-page-size="10">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID #</th>
+                                                    <th>Name</th>
+                                                    <th>Surname</th>
+                                                    <th>IIN</th>
+                                                    <th>Phone</th>
+                                                    <th>Date of birth</th>
+                                                    <th>Login</th>
+                                                    <th>Password</th>
+                                                    <th>Family doctor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (ChildDoctorViewModel cd in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@cd.child.Id</td>
+                                                        <td>@cd.child.FirstName</td>
+                                                        <td>@cd.child.LastName</td>
+                                                        <td>@cd.child.IIN</td>
+                                                        <td>@cd.child.Phone</td>
+                                                        <td>@cd.child.DateOfBirth</td>
+                                                        <td>@cd.child.Login</td>
+                                                        <td>@cd.child.Password</td>
+                                                        <td>@cd.doctor.FirstName @cd.doctor.LastName</td>
+                                                    </tr>
+
+                                                }
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Patient</button>
+                                                    </td>
+                                                    @{
+                                                        Child c = new Child();
+                                                        await Html.RenderPartialAsync("~/Views/Partials/_Patients.cshtml", c);
+                                                    }
+                                                    <td colspan="6">
+                                                        <div class="text-right">
+                                                            <ul class="pagination"> </ul>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
