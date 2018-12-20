@@ -1,44 +1,38 @@
-﻿@model Playground.Models.Admin
-
-@{
-    var fullName = Model.Name + " " + Model.Surname; 
-}
+﻿@model Playground.Models.Doctor
 
 <div class="card-body">
-    <form class="form-horizontal form-material">
+    <form class="form-horizontal form-material" asp-action="UpdateDoctor">
+        <input type="hidden" asp-for="Id" name="Id" value="@Model.Id" />
+        <input type="hidden" asp-for="DateOfBirth" name="DoB" value="@Model.DateOfBirth" />
+        <input type="hidden" asp-for="Login" name="Login" value="@Model.Login" />
         <div class="form-group">
             <label class="col-md-12">Full Name</label>
             <div class="col-md-12">
-                <input type="text" placeholder="@fullName" class="form-control form-control-line">
+                <input type="text" asp-for="FirstName" placeholder="@Model.FirstName" class="form-control form-control-line">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-12">Full Name</label>
+            <div class="col-md-12">
+                <input type="text" asp-for="LastName" placeholder="@Model.LastName" class="form-control form-control-line">
             </div>
         </div>
         <div class="form-group">
             <label for="example-email" class="col-md-12">IIN</label>
             <div class="col-md-12">
-                <input type="email" placeholder="@Model.Login" class="form-control form-control-line" name="example-email" id="example-email">
+                <input asp-for="Login" placeholder="@Model.Login" class="form-control form-control-line" name="example-email" id="example-email">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-12">Password</label>
             <div class="col-md-12">
-                <input type="password" value="password" class="form-control form-control-line">
+                <input type="password" asp-for="Password" value="@Model.Password" class="form-control form-control-line">
             </div>
         </div>
         <div class="form-group">
             <label class="col-md-12">Phone No</label>
             <div class="col-md-12">
-                <input type="text" placeholder="123 456 7890" class="form-control form-control-line">
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-sm-12">Select Doctor</label>
-            <div class="col-sm-12">
-                <select class="form-control form-control-line">
-                    <option>Steve Jobs</option>
-                    <option>Madina Umirbekova</option>
-                    <option>Yuliya Masalkina</option>
-                    <option>Tansholpan Seriktessova</option>
-                </select>
+                <input type="text" asp-for="Phone" placeholder="@Model.Phone" class="form-control form-control-line">
             </div>
         </div>
         <div class="form-group">

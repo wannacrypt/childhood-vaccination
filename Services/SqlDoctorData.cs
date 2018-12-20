@@ -15,11 +15,18 @@ namespace Playground.Services
             _context = context;
         }
 
+
         public Doctor Add(Doctor doctor)
         {
             _context.Doctors.Add(doctor);
             _context.SaveChanges();
             return doctor;
+        }
+
+        public void Update(Doctor doctor)
+        {
+            _context.Doctors.Update(doctor);
+            _context.SaveChanges(); 
         }
 
         public void Delete(int id)

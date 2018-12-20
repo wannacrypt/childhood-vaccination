@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Playground.ViewModels.ChildDoctorViewModel>
+@model IEnumerable<Playground.ViewModels.ChildDoctorViewModel>
 @using Playground.Models
 @using Playground.ViewModels
 @{
@@ -12,8 +12,8 @@
     </div>
     <div id="main-wrapper">
         @{
-            await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml");
-            await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
+        await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml", Model);
+        await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
         <div class="page-wrapper">
             <br />

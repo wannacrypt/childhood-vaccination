@@ -15,12 +15,14 @@ namespace Playground.Controllers
         public HomeController(IGreetingService greetingService, 
                               IAdminService adminService, 
                               IChildService childService,
-                              IDoctorService doctorService)
+                              IDoctorService doctorService,
+                              ITicketService ticketService)
         {
             _adminService = adminService;
             _greetingService = greetingService;
             _childService = childService;
             _doctorService = doctorService;
+            _ticketService = ticketService;
         }
 
 
@@ -53,11 +55,24 @@ namespace Playground.Controllers
 
             if (!string.IsNullOrEmpty(userLogin))
             {
-                Admin admin = _adminService.Get(userLogin);
-                return View("~/Views/Home/Profile.cshtml", admin);
+                Doctor doctor = _doctorService.Get(userLogin);
+                doctor.Tickets = _ticketService.GetDoctorTickets(doctor.Id); 
+
+                return View("~/Views/Home/Profile.cshtml", doctor);
 
             }
             return RedirectToAction("Login", "Authorization");
+        }
+
+        [HttpPost]
+        public IActionResult UpdateDoctor(Doctor doc)
+        {
+            if (ModelState.IsValid)
+            {
+                _doctorService.Update(doc);
+            }
+
+            return RedirectToAction("Profile", "Home");
         }
 
         public IActionResult Logout()

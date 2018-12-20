@@ -61,6 +61,12 @@ namespace Playground.Migrations
                         .IsRequired()
                         .HasMaxLength(50);
 
+                    b.Property<string>("Login")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasMaxLength(20);
@@ -75,13 +81,19 @@ namespace Playground.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<DateTime>("DateOfBirth");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50);
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Login")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.Property<string>("Phone");
 
                     b.HasKey("Id");
 
@@ -111,7 +123,28 @@ namespace Playground.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("ChildId");
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.Property<string>("Description")
+                        .IsRequired();
+
+                    b.Property<string>("Diagnosis")
+                        .IsRequired();
+
+                    b.Property<string>("DoctorFullName")
+                        .IsRequired();
+
+                    b.Property<string>("PrescriptionText")
+                        .IsRequired();
+
+                    b.Property<int>("Room");
+
                     b.Property<string>("Text");
+
+                    b.Property<string>("VisitType")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
@@ -141,11 +174,25 @@ namespace Playground.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Diagnosis")
+                        .IsRequired();
+
+                    b.Property<string>("DoctorFullName")
+                        .IsRequired();
+
                     b.Property<int>("DoctorId");
+
+                    b.Property<DateTime>("EndDate");
+
+                    b.Property<string>("Prescription");
 
                     b.Property<int>("Room");
 
+                    b.Property<DateTime>("StartDate");
+
                     b.Property<TimeSpan>("Time");
+
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
