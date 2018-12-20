@@ -1,4 +1,4 @@
-﻿@model Playground.Models.Admin
+﻿@model Playground.Models.Doctor
 @{
     Layout = "~/Views/Layout/Layout.cshtml";
 }
@@ -10,7 +10,7 @@
     </div>
     <div id="main-wrapper">
         @{
-        await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml");
+        await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml", Model);
         await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
         <div class="page-wrapper">

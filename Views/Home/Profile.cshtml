@@ -1,4 +1,4 @@
-﻿@model Playground.Models.Admin
+﻿@model Playground.Models.Doctor
 @{
     Layout = "~/Views/Layout/Layout.cshtml";
 }
@@ -10,7 +10,7 @@
     </div>
     <div id="main-wrapper">
         @{
-            await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml");
+            await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml", Model);
             await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
 
@@ -27,7 +27,7 @@
                             <div class="card-body">
                                 <center class="m-t-30">
                                     <img src="~/Res/images/users/2.jpg" class="img-circle" width="150" />
-                                    <h4 class="card-title m-t-10">@Model.Name @Model.Surname</h4>
+                                    <h4 class="card-title m-t-10">@Model.FirstName @Model.LastName</h4>
                                     <h6 class="card-subtitle">@Model.Login</h6>
                                 </center>
                             </div>
@@ -36,9 +36,9 @@
                             </div>
                             <div class="card-body">
                                 <small class="text-muted p-t-30 db">Phone</small>
-                                <h6>+91 654 784 547</h6>
+                                <h6>@Model.Phone</h6>
                                 <small class="text-muted p-t-30 db">Birth Date</small>
-                                <h6>14-10-2017</h6>
+                                <h6>@Model.DateOfBirth.ToShortDateString()</h6>
 
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="home" role="tabpanel">
                                     @{
-                                        await Html.RenderPartialAsync("~/Views/Partials/_Timeline.cshtml", Model);
+                                        await Html.RenderPartialAsync("~/Views/Partials/_Timeline.cshtml", Model.Tickets);
                                     }
                                 </div>
                                 <div class="tab-pane" id="settings" role="tabpanel">

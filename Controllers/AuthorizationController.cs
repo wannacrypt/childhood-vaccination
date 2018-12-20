@@ -52,5 +52,19 @@ namespace Playground.Controllers
         {
             return View("~/Views/Authorization/SignUp.cshtml");
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateAccount(Doctor doctor)
+        {
+            if (ModelState.IsValid)
+            {
+                _doctorService.Add(doctor);
+                return View("~/Views/Authorization/Login.cshtml");
+            }
+
+            return View("~/Views/Authorization/SignUp.cshtml"); 
+        }
+
     }
 }

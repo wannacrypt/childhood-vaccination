@@ -33,6 +33,14 @@ namespace Playground.Services
             return _context.Tickets.FirstOrDefault(t => t.Id == id);
         }
 
+        public List<Ticket> GetDoctorTickets(int doctorId)
+        {
+            return _context.Tickets
+                           .Where(t => t.DoctorId == doctorId)
+                           .OrderByDescending((Ticket arg) => arg.StartDate)
+                           .ToList(); 
+        }
+
         public IEnumerable<Ticket> GetAll()
         {
             return _context.Tickets.OrderBy(t => t.Id);
