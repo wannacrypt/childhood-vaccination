@@ -69,7 +69,8 @@ namespace Playground
             routeBuilder.MapRoute("Calendar", "{controller=Schedule}/{action=Index}/");
             routeBuilder.MapRoute("Logout", "{controller=Home}/{action=Logout}");
             routeBuilder.MapRoute("SignUp", "{controller=Authorization}/{action=SignUp}");
-            routeBuilder.MapRoute("CreateAccount", "{controller=Authorization}/{action=CreateAccount}"); 
+            routeBuilder.MapRoute("CreateAccount", "{controller=Authorization}/{action=CreateAccount}");
+            routeBuilder.MapRoute("UpdateDoctor", "{controller=Home}/{action=UpdateDoctor}");
         }
     }
 }

@@ -11,16 +11,8 @@
     <Folder Include="Models\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Home\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\Authorization\" />
     <Folder Include="Data\" />
-    <Folder Include="Views\Doctor\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Children\" />
-    <Folder Include="Views\Nurse\" />
     <Folder Include="wwwroot\Res\" />
-    <Folder Include="Views\Layout\" />
-    <Folder Include="Views\Partials\" />
     <Folder Include="compilerconfig.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Folder>

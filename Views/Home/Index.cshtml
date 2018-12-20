@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Playground.Models.Doctor
+
+@{
     Layout = "~/Views/Layout/Layout.cshtml";
 }
 <body class="fix-header card-no-border">
@@ -9,8 +11,8 @@
     </div>
     <div id="main-wrapper">
         @{
-            await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml");
-            await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
+        await Html.RenderPartialAsync("~/Views/Partials/_Header.cshtml", Model);
+        await Html.RenderPartialAsync("~/Views/Partials/_Menu.cshtml");
         }
         <div class="page-wrapper">
             <div class="container-fluid">
@@ -44,7 +46,7 @@
                                         </div>
                                     </div>
                                     @{
-                                        await Html.RenderPartialAsync("~/Views/Partials/_Patients.cshtml");
+                                    await Html.RenderPartialAsync("~/Views/Partials/_Patients.cshtml");
                                     }
                                 </div>
                             </div>

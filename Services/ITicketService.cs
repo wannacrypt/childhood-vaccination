@@ -9,6 +9,7 @@ namespace Playground.Services
         IEnumerable<Ticket> GetAll();
         Ticket Get(int id);
         Ticket Add(Ticket ticket);
+        List<Ticket> GetDoctorTickets(int doctorId); 
         void Delete(int id);
     }
 }

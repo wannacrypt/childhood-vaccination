@@ -60,10 +60,11 @@ namespace Playground.Controllers
             if (ModelState.IsValid)
             {
                 _doctorService.Add(doctor);
-                return RedirectToAction("Index", "Home");
+                return View("~/Views/Authorization/Login.cshtml");
             }
 
-            return View(); 
+            return View("~/Views/Authorization/SignUp.cshtml"); 
         }
+
     }
 }

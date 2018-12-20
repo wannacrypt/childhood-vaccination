@@ -9,10 +9,12 @@ namespace Playground.Controllers
     public class ScheduleController : Controller
     {
         private IScheduleService _scheduleService;
+        private IDoctorService _doctorService; 
 
-        public ScheduleController(IScheduleService scheduleService) 
+        public ScheduleController(IScheduleService scheduleService, IDoctorService doctorService) 
         {
             _scheduleService = scheduleService;
+            _doctorService = doctorService; 
         }
 
         public IActionResult ListSchedule()
@@ -60,7 +62,8 @@ namespace Playground.Controllers
 
             if (!string.IsNullOrEmpty(userLogin))
             {
-                return View("~/Views/Home/Calendar.cshtml");
+                var doc = _doctorService.Get(userLogin); 
+                return View("~/Views/Home/Calendar.cshtml", doc);
 
             }
             return RedirectToAction("Login", "Authorization");
