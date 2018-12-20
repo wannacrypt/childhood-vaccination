@@ -45,5 +45,11 @@ namespace Playground.Controllers
 
             return View();
         }
+
+
+        public IActionResult SignUp()
+        {
+            return View("~/Views/Authorization/SignUp.cshtml");
+        }
     }
 }

@@ -67,7 +67,8 @@ namespace Playground
             routeBuilder.MapRoute("Profile", "{controller=Home}/{action=Profile}/");
             routeBuilder.MapRoute("HomePage", "{controller=Home}/{action=Index}/");
             routeBuilder.MapRoute("Calendar", "{controller=Schedule}/{action=Index}/");
-            routeBuilder.MapRoute("Logout", "{controller=Home}/{action=Logout}"); 
+            routeBuilder.MapRoute("Logout", "{controller=Home}/{action=Logout}");
+            routeBuilder.MapRoute("SignUp", "{controller=Authorization}/{action=SignUp}"); 
         }
     }
 }

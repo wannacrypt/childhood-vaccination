@@ -580,6 +580,14 @@
     <Content Remove="wwwroot\js\calendar.js" />
     <Content Remove="wwwroot\js\calendar.min.js" />
     <Content Remove="wwwroot\Res\css\plugins\bootstrap\css\bootstrap.css" />
+    <Content Remove="wwwroot\js\sticky.js" />
+    <Content Remove="wwwroot\js\sticky.min.js" />
+    <Content Remove="wwwroot\js\custom.js" />
+    <Content Remove="wwwroot\js\custom.min.js" />
+    <Content Remove="wwwroot\js\style-switcher.js" />
+    <Content Remove="wwwroot\js\style-switcher.min.js" />
+    <Content Remove="wwwroot\js\calendar.js" />
+    <Content Remove="wwwroot\js\calendar.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Models\User.cs" />
