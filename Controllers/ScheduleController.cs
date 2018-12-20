@@ -1,56 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Playground.Data;
 using Playground.Models;
 using Playground.Services;
 
 namespace Playground.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ScheduleController : Controller
     {
-        private IScheduleService _scheduleService;
+        private ChildVaccDbContext _context;
 
-        public ScheduleController(IScheduleService scheduleService) 
+        public ScheduleController(ChildVaccDbContext context)
         {
-            _scheduleService = scheduleService;
+            _context = context;
         }
 
-        public IActionResult ListSchedule()
+        // GET: api/values
+        [HttpGet("{id}", Name = "Tickets")]
+        public async Task<ActionResult<IEnumerable<Ticket>>> GetTickets(int id)
         {
-            var model = _scheduleService.GetAll();
-            return View(model);
-        }
-
-        public IActionResult DeleteSchedule(int id)
-        {
-            _scheduleService.Delete(id);
-            return RedirectToAction(nameof(ListSchedule));
-        }
-
-        [HttpGet]
-        public IActionResult CreateSchedule()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult CreateSchedule(Schedule schedule)
-        {
-            if(ModelState.IsValid)
-            {
-                var newSchedule = new Schedule
-                {
-                    Morning = schedule.Morning,
-                    Afternoon = schedule.Afternoon,
-                    Evening = schedule.Evening,
-                    DoctorID = schedule.DoctorID
-                };
-
-                _scheduleService.Add(schedule);
-                return RedirectToAction(nameof(ListSchedule));
-            } else 
-            {
-                return View();
-            }
+            return await _context.Tickets.Where(t => t.UserId == id)
+                                         .OrderByDescending(t => t.StartDate.Date)
+                                         .ThenBy(t => t.StartDate.Year).ToListAsync();
         }
     }
 }

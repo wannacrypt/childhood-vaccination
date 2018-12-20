@@ -31,17 +31,17 @@ namespace Playground.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Admin>> Get(int id)
+        [HttpGet("{login}")]
+        public async Task<ActionResult<Admin>> Get(string login)
         {
-            var admin = await _context.Admins.FindAsync(id);
+            var admin = await _context.Admins.Where(a => a.Login.Equals(login)).ToListAsync();
 
             if(admin == null)
             {
                 return NotFound();
             }
 
-            return admin;
+            return admin[0];
         }
 
         // POST api/values 

@@ -1,54 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Playground.Data;
 using Playground.Models;
 using Playground.Services;
 
 namespace Playground.Controllers
 {
-	public class PrescriptionController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PrescriptionController : Controller
     {
-        private IPrescriptionService _prescriptionService;
+        private ChildVaccDbContext _context;
 
-        public PrescriptionController(IPrescriptionService prescriptionService)
+        public PrescriptionController(ChildVaccDbContext context)
         {
-            _prescriptionService = prescriptionService;
+            _context = context;
         }
 
-        public IActionResult ListPrescriptions()
-        {
-            var model = _prescriptionService.GetAll();
-            return View(model);
-        }
-
-        public IActionResult DeletePrescription(int id)
-        {
-            _prescriptionService.Delete(id);
-            return RedirectToAction(nameof(ListPrescriptions));
-        }
-
+        // GET: api/values
         [HttpGet]
-        public IActionResult CreatePrescription()
+        public async Task<ActionResult<IEnumerable<Prescription>>> Get()
         {
-            return View();
+            var prescriptions = await _context.Prescriptions.ToListAsync(); 
+
+            return prescriptions;
         }
 
-        [HttpPost]
-        public IActionResult CreatePrescription(Prescription prescription)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<Prescription>>> GetUserPrescriptions(int id)
         {
-            if(ModelState.IsValid)
-            {
-                var newPrescription = new Prescription
-                {
-                    Text = prescription.Text
-                };
+            var prescriptions = await _context.Prescriptions.Where(p => p.ChildId == id)
+                                                            .OrderByDescending(t => t.DateTime.Day)
+                                                            .ThenBy(t => t.DateTime.Year).ToListAsync();
 
-                _prescriptionService.Add(newPrescription);
-
-                return RedirectToAction(nameof(ListPrescriptions));
-            } else 
-            {
-                return View();
-            }
+            return prescriptions;
         }
     }
 }

@@ -1,54 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Playground.Data;
 using Playground.Models;
 using Playground.Services;
 
 namespace Playground.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ChildrenController : Controller
     {
-        private IChildService _childService;
+        private ChildVaccDbContext _context;
 
-        public ChildrenController(IChildService childService)
+        public ChildrenController(ChildVaccDbContext context)
         {
-            _childService = childService;
+            _context = context;
         }
 
-        public IEnumerable<Child> ListChildren()
-        {
-            var model = _childService.GetAll();
-            //return View(model);
-            return model;
-        }
-
+        // GET: api/values
         [HttpGet]
-        public IActionResult CreateChild()
+        public async Task<ActionResult<IEnumerable<Child>>> Get()
         {
-            return View();
+            return await _context.Children.ToListAsync();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult CreateChild(Child child)
+        // GET api/values/5
+        [HttpGet("{iin}")]
+        public async Task<ActionResult<Child>> Get(string iin)
         {
-            if (ModelState.IsValid)
-            {
-                var newChild = new Child();
-                newChild.FirstName = child.FirstName;
-                newChild.LastName = child.LastName;
-                newChild.IIN = child.IIN;
-                newChild.DateOfBirth = child.DateOfBirth;
-                newChild.Phone = child.Phone;
+            var child = await _context.Children.Where(a => a.IIN.Equals(iin)).ToListAsync();
 
-                newChild = _childService.Add(newChild);
-
-                return RedirectToAction(nameof(ListChildren));
-            }
-            else
+            if (child == null)
             {
-                return View();
+                return NotFound();
             }
+
+            return child[0];
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> ChangeChild(long id, Child child)
+        {
+            if (id != child.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(child).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
     }
 }

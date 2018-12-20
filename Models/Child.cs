@@ -5,6 +5,10 @@ namespace Playground.Models
     public class Child
     {
         public int Id { get; set; }
+        [Required]
+        public string Login { get; set; }
+        [Required, DataType(DataType.Password)]
+        public string Password { get; set; }
         [Required, MaxLength(20)]
         public string IIN { get; set; }
         [Required, MaxLength(50)]
