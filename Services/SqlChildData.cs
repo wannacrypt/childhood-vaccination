@@ -35,7 +35,7 @@ namespace Playground.Services
 
         public IEnumerable<Child> GetAll()
         {
-            return _context.Children.OrderBy(c => c.FirstName);
+            return _context.Children.OrderBy(c => c.Id);
         }
     }
 }
