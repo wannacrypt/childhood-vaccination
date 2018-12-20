@@ -595,6 +595,7 @@
     <Compile Remove="Migrations\20181128061520_SecondCreate.cs" />
     <Compile Remove="App_Start\BundleConfig.cs" />
     <Compile Remove="Migrations\20181129040926_SecondCreate.cs" />
+    <Compile Remove="Migrations\20181202055612_FifthCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Res\bootstrap\css\bootstrap.css" />

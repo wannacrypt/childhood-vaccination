@@ -17,6 +17,7 @@ namespace Playground.Models
         public string LastName { get; set; }
         [Required, MaxLength(20)]
         public string Phone { get; set; }
+        public int DoctorID { get; set; }
 
         [Required, Display(Name = "Date of birth")]
         public DateTime DateOfBirth { get; set; }
