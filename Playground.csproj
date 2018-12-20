@@ -605,6 +605,8 @@
     <Compile Remove="Migrations\20181129040926_SecondCreate.cs" />
     <Compile Remove="Migrations\20181202055612_FifthCreate.cs" />
     <Compile Remove="Migrations\ChildVaccDbContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20181220051621_Seventh.Designer.cs" />
+    <Compile Remove="Migrations\20181220051621_Seventh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\Res\bootstrap\css\bootstrap.css" />
